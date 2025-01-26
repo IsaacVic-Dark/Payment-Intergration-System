@@ -21,13 +21,13 @@ const getAccessToken = async () => {
   }
 };
 
-const stkPush = async () => {
+const stkPush = async (phone, amount) => {
   const shortCode = process.env.MPESA_SHORTCODE;
   const passkey = process.env.MPESA_PASSKEY;
   const mpesaUrl = process.env.MPESA_URL;
   const callBackURL = process.env.MPESA_CALLBACK_URL;
-  const phone = 254710927292;
-  const amount = 1;
+  // const phone = 254710927292;
+  // const amount = 1;
   try {
     const token = await getAccessToken();
     const timestamp = moment().format("YYYYMMDDHHmmss");

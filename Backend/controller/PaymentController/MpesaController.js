@@ -39,7 +39,8 @@ const get_access_token = async (req, res) => {
 
 const stk_push = async (req, res) => {
   try {
-    const response = await stkPush();
+    const { phone, amount } = req.body;
+    const response = await stkPush(phone, amount);
     res.status(200).json({ message: "STK push sent successfully", response });
   } catch (error) {
     console.error(error);
